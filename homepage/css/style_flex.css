@@ -1,0 +1,54 @@
+*{
+    margin: 0 auto;
+    padding: 0;
+    list-style: none ;
+    font-family: "맑은 고딕";
+    color: #333333;
+}
+
+.container{
+    top: 25%;
+    float: left;
+    position: fixed;
+    display: flex;
+    background-color: red;
+    width: 100%;
+    float: center;
+}
+
+.item1{
+    background-color: blue;
+    width: 16.6%;
+}
+.void1{
+    width: 16.6%;
+    background-color: aqua;
+}
+.top{
+    height: 25%;
+    float: left;
+    position: fixed;
+    display: flex;
+    background-color: red;
+    width: 100%;
+    float: center;
+}
+.item2{
+    background-color: blue;
+    width: 50%;
+}
+.void2{
+    width: 25%;
+    background-color: aqua;
+}
+.long{
+    height: 2000px;
+    width: 100%;
+    background-color: grey;
+}
+
+  @media (max-width: 600px) {
+    .item1 {
+      display: none;
+    }
+  }
