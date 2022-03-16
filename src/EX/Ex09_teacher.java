@@ -19,7 +19,7 @@ public class Ex09_teacher {
 		int d = (int) (Math.random() * 10 );  // 0 ~ 9 까지의 랜덤한 값을 생성 
 		int e = (int) (Math.random() * 10 + 1);  // 1부터 10 까지의 랜덤한 값을 생성 
 		
-		System.out.println("0부터 9 까지의 랜덤한 값 : " + d);
+		System.out.println("0부터 9 까지의 랜덤한 값 : " + d + " "+ d + " "+ d + " "); // 한번 연산해서 쭉 뿌림
 		System.out.println("1 부터 10 까지의 랜덤한 값 : " + e);
 		
 		// 1부터 100 까지의 난수를 발생시킴 
