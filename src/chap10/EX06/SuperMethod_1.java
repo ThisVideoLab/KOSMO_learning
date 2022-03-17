@@ -1,4 +1,4 @@
-package chap10.EX06;
+package chap10;
 
 // super. 키워드 : 부모클래스를 지칭, 메소드 내부에서 사용이 됨.
 
