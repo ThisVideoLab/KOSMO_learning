@@ -33,18 +33,18 @@ class Bc extends Ab{
 	}
 }
 
-class Aaa{
+class Aaa1{
 	protected void abc() {
 		
 	}
 	
 }
 
-class B1 extends Aaa {
+class B11 extends Aaa1 {
 	@Override
 	public void abc() {}
 }
-class B2 extends Aaa {
+class B21 extends Aaa1 {
 	@Override
 	protected void abc() {}
 }
