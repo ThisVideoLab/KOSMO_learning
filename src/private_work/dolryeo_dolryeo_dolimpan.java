@@ -7,9 +7,9 @@ public class dolryeo_dolryeo_dolimpan {
 	public static void main(String[] args) {
 		
 		
-		String classA[] = {"권용희", "김병현", "김진수", "김태형", "박은비", "서주현", "안병욱", "여원준","유민정", "유준상", "이창준", "조현서", "조흥권", "주진선", "하지승"};
+		String classA[] = {"권용희", "김병현", "김진수", "김태형", "박은비", "서주현", "안병욱", "여원준","유민정", "유준상", "조현서", "조흥권", "주진선", "하지승"};
 		String classB[] = {"강성민", "권수향", "김겨울", "김문준", "김재묵", "김채록", "박인수", "신장현","이규영", "이다은", "이영상", "이준형", "임규민", "전승연", "조승현"};
-		String prsOrderA[] = new String[15];
+		String prsOrderA[] = new String[14];
 		String prsOrderB[] = new String[15];
 		
 		// 분반별 명단, 편의상 먼저 발표하는 분반을 A분반이라 칭함.
@@ -21,9 +21,10 @@ public class dolryeo_dolryeo_dolimpan {
 		System.out.println();
 		
 		System.out.print("A 분반: ");
-		for(int a=0; a<15; a++) {
+		for(int a=0; a<14; a++) {
 			System.out.print(classA[a] + " ");
 		}
+		System.out.println("이창준");
 		
 		System.out.println();
 		System.out.println();
@@ -42,30 +43,39 @@ public class dolryeo_dolryeo_dolimpan {
 		String lottojoa = scan.next(); // 배정 전에 전에 puase 역할
 		
 
-		int pan[] = new int [15]; // 각 분반의 인원에 해당하는 배열 생성
+		int pan1[] = new int [14]; // 각 분반의 인원에 해당하는 배열 생성
+		int pan2[] = new int [15];
 		
-		for(int i=0; i<15; i++) { // 15명을 랜덤해서 배정
-			pan[i] = (int)(Math.random() * 15); 
+		for(int i=0; i<14; i++) { // 14명을 랜덤해서 배정
+			pan1[i] = (int)(Math.random() * 14); 
 			for(int j=0; j<i; j++) { // 중복되는 경우에 중복되는 해당 슬롯을 취소한 후에 다시 추첨
-				if(pan[i] == pan[j]) {
+				if(pan1[i] == pan1[j]) {
 					i--; break; // 방금 배정한 회차를 무효로 돌리고 돌아가서 다시 추첨
+				}
+			}
+		} 
+		for(int o=0; o<15; o++) { // 15명을 랜덤해서 배정
+			pan2[o] = (int)(Math.random() * 15); 
+			for(int t=0; t<o; t++) { // 중복되는 경우에 중복되는 해당 슬롯을 취소한 후에 다시 추첨
+				if(pan2[o] == pan2[t]) {
+					o--; break; // 방금 배정한 회차를 무효로 돌리고 돌아가서 다시 추첨
 				}
 			}
 		} 
 		System.out.println();
 		System.out.println("<===== A반 발표 순서 추첨 결과 =====> "); // 번호 출력
 		//for(int i=0; i<15; i++) { System.out.print(pan[i] + " "); }
-		for(int i=0; i<15; i++) {
-			System.out.print(classA[pan[i]] + " ");  // 랜덤 배정한 숫자에 해당하는 방에 할당된 이름 출력
-			prsOrderA[i] = classA[pan[i]]; // 일정표 출력을 위한 배열에 각 순서별 배정 인원의 이름을 입력
+		for(int i=0; i<14; i++) {
+			System.out.print(classA[pan1[i]] + " ");  // 랜덤 배정한 숫자에 해당하는 방에 할당된 이름 출력
+			prsOrderA[i] = classA[pan1[i]]; // 일정표 출력을 위한 배열에 각 순서별 배정 인원의 이름을 입력
 		}
 		System.out.println();
 		
 		System.out.println();
 		System.out.println("<===== B반 발표 순서 추첨 결과 =====> "); // 번호 출력
 		for(int K=0; K<15; K++) {
-			System.out.print(classB[pan[K]] + " "); // 랜덤 배정한 숫자에 해당하는 방에 할당된 이름 출력
-			prsOrderB[K] = classB[pan[K]]; // 일정표 출력을 위한 배열에 각 순서별 배정 인원의 이름을 입력
+			System.out.print(classB[pan2[K]] + " "); // 랜덤 배정한 숫자에 해당하는 방에 할당된 이름 출력
+			prsOrderB[K] = classB[pan2[K]]; // 일정표 출력을 위한 배열에 각 순서별 배정 인원의 이름을 입력
 		}
 		System.out.println();
 		System.out.println();
@@ -147,7 +157,6 @@ public class dolryeo_dolryeo_dolimpan {
 		
 		System.out.println(prsOrderA[12]);
 		System.out.println(prsOrderA[13]);
-		System.out.println(prsOrderA[14]);
 		System.out.println("A분반 발표 종료");
 		System.out.println();
 		
