@@ -1,4 +1,4 @@
-package chap10;
+package chap10.EX06;;
 
 class AAAA {
 	AAAA(){

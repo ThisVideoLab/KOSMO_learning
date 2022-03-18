@@ -1,4 +1,4 @@
-package chap10;
+package chap10.EX06;
 
 // this: 자신의 객체
 // 오버라이딩: 부모의 원래 메서드는 완저히 삭제 또는 갈음되지 아니함.
