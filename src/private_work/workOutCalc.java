@@ -1,6 +1,6 @@
 package private_work;
 import java.util.Scanner;
-public class notepad {
+public class workOutCalc {
    static void math(String... values) {
       int sum = 0;      // 들어오는 정수를 합하는 변수
       double avg ;

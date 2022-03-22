@@ -23,7 +23,7 @@ public class EX {
 		// 그래서 news()를 호출하고 싶다면 다음과 같이 다운캐스팅해야 함.
 		SamsungPhone g22 = (SamsungPhone) g21; // 다운 캐스팅 완료
 		g22.news(); // 다운캐스팅 후에 호출. 사실 다운캐스팅으로 전환이라기보단 새로이 생성하는거지만
-		
+		int[ ]  studnetIDs  =  { 102, 102 } ;
 	}
 
 }
