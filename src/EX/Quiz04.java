@@ -30,7 +30,7 @@ public class Quiz04 {
 		students s2 = new students(1112, "심청이", 70, 90);
 		students s3 = new students(1113, "바둑이", 90, 70);
 		students s4 = new students(1111, "홍길동의 머리카락 분신", 30, 40);
-		
+		int [] a = {1,2,3};
 		
 		
 		// studentID가 같은 경우 이퀄스와 == 써서 같은 학생이다라고 출력함. 

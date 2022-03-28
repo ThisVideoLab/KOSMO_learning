@@ -12,6 +12,8 @@ class MyData { // 두 쓰레드가 공유하는 객체 필드
 	public void plusData() { 
 		
 		synchronized (this){ // 블럭 동기화 메서드의 일부분만 동기화, 여기서 this란 자신의 객체를 가리킴.
+			 				// this: 자신의 객체를 뜻하고, 동기화 블록에 접근하는 키이다.
+			 				// 모든 쓰레드는 key를 가져야 동기화 블록에 접근이 가능하다.
 			int mydata = data;
 			try{Thread.sleep(2000);}catch(InterruptedException e){} 
 			data = mydata + 1; 
