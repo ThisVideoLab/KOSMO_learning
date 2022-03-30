@@ -7,6 +7,12 @@ class A{
 		// System.out.println(t.length()); // t.length() : String 클래스에서 글자수를 리턴해줌 // 사용불가
 		System.out.println(t.equals("안녕")); // t.equals는 Object 클래스의 메소드는 사용이 가능함 
 	}
+	public <T extends Object> void method2 (T t) { // <T extends Object>
+		System.out.println(t.equals("반갑습니다")); // Object 클래스의 메소드만 사용가능하다.
+	}
+	public <T extends String> void method3 (T t) { // <T extends String>
+		System.out.println(t.equals(t.length())); // 
+	}
 }
 
 public class AvailableMethodInGenericMethod {
