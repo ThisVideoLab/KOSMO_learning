@@ -5,7 +5,11 @@ abstract class Fruit{
 	public abstract void print();
 }
 
-class edible<T extends Fruit>{ // 먹을 수 있는 제네릭 메서드
+class edible<T extends Fruit>{ // 먹을 수 있는 제네릭 메서드 // DTO, VO 
+							   // DTO (Data Tranfer Object) - getter, setter,
+							   // VO (Value Object) -getter
+							   // 데이터를 받아서 전송하는 중간자 역할을 함.
+							   // 계층간에 값을 받아서 전송, 중간자 역할
 	private T t;
 	
 	public T getT() {
@@ -88,9 +92,6 @@ public class EX_Restric_Generic_Type {
 		edible<Bananan> e3 = new edible<Bananan>();
 		//edible<Pencil> e4 = new edible<Pencil>(); // 오류 발생
 		
-		e1.toString();
-		e2.toString();
-		e3.toString();
 		e1.setT(new Apple ("apple",1000));
 		e2.setT(new Strawberry("strawberry",2000));
 		e3.setT(new Bananan ("banana",3000));
