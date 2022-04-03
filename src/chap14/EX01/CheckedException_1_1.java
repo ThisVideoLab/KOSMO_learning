@@ -21,7 +21,7 @@ public class CheckedException_1_1 {
 			System.out.println("올바른 입력값이 아닙니다.");
 			// e.printStackTrace(); // 오류를 추적해서 알려주는 코드
 			
-		}finally { // 오류에 상관 없이 항상 작동하는 부분 // 양쪽에 어울리는 멘트를 출력해줘야겠군
+		}finally { // 오류에 상관 없이 항상 작동하는 부분 // 에러나 정상작동에나 둘 다 어울리게끔 작성해주는 것이 바람직해 보임 
 			System.out.println("프로그램을 종료합니다.");
 		}
 	}

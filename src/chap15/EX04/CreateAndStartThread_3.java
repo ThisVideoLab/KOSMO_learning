@@ -30,11 +30,7 @@ class VideoFileRunnable implements Runnable{
    }
 }
 
-
-
-
 public class CreateAndStartThread_3 {
-
    public static void main(String[] args) {
       
       Runnable smi = new SMIFileRunnable();

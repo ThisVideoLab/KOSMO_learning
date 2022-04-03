@@ -10,9 +10,11 @@ package chap15.EX16;
 			// a 객체가 모두 완료된 경우는 자신의 쓰레드도 Runnable 상태로 들어감.
 
 class MyThread extends Thread{
+	
 	@Override
 	public void run() {
 		try {Thread.sleep(3000);}catch (InterruptedException e) { // 3초동안 timed waiting 상태로 대기 / Interrupt가 발생하면 예외를 발생시키고 Runnable 상태로 이동
+			System.out.println(getName() +": "+ getState());
 			System.out.println("---sleep() 진행중 Interrupt 발생 삐뽀삐뽀");
 			for (long i =0; i < 100000000L; i++) {} // 시간지연용 for문 // 0.5초
 		}
@@ -24,19 +26,19 @@ public class TimedWaiting_sleep {
 		
 		MyThread myThread1 = new MyThread();
 		myThread1.start(); // 시동만 시켜놓은 상태일 뿐 뭔가 출력되진 아니긴 함.
-		System.out.println("initial MyThread state: " + myThread1.getState());
+		System.out.println("initial " + myThread1.getName() +" state: " + myThread1.getState());
 		System.out.println();
 		System.out.println("================================================");
 		
 
-		try {Thread.sleep(2900);} catch (InterruptedException e) {} //  쓰레드 시작 준비시간 // 이때 위에서 지연한 3000ms를 넘는 수치를 슬립에 입력하면 위의 지연된
+		try {Thread.sleep(1400);} catch (InterruptedException e) {} //  쓰레드 시작 준비시간 // 이때 위에서 지연한 3000ms를 넘는 수치를 슬립에 입력하면 위의 지연된
 																					   // 시간이 다 지난 후라서 terminated가 출력된다.
 		System.out.println("MyThread State 1 : " + myThread1.getState()); //timed waiting 상태 출력
 		
 		System.out.println();
 		System.out.println("================================================");
 		System.out.println();
-		
+		try {Thread.sleep(1400);} catch (InterruptedException e) {}
 		
 		// 3초 이전에 Interrupt 발생
 		myThread1.interrupt();

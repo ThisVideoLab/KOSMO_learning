@@ -9,8 +9,8 @@ package chap15.EX08;
 class MyData { // 쓰레드가 공유하는 객체 필드 생성
 	int data = 3;
 	public void plusData() {
-		int mydata = data;
-		try{Thread.sleep(2000);}catch(InterruptedException e){} // 딜레이를 2초 줘서 1번 2번 플러스 쓰레드가 동시에 값을 가져가게끔 만들어줌
+		int mydata = data; // 데이터 가져오기
+		try{Thread.sleep(3000);}catch(InterruptedException e){} // 딜레이를 수초 줘서 1번 2번 플러스 쓰레드가 동시에 값을 가져가게끔 만들어줌
 		data = mydata + 1; // 값을 1씩 증가시킴
 	}
 }
@@ -37,13 +37,19 @@ public class TherNeedsForSynchronized {
 		//1. plusThread 1
 		Thread plusThread1 = new PlusThread(myData);
 		plusThread1.setName("plusThread1");
-		plusThread1.start();
+		plusThread1.start(); // 첫번째 스레드 값 출력
 		
 		try {Thread.sleep(1000);} catch(InterruptedException e) {}
 		
 		Thread plusThread2 = new PlusThread(myData);
 		plusThread2.setName("plusThread2");
-		plusThread2.start();
+		plusThread2.start(); // 두번째 스레드값 출력
+		
+		try {Thread.sleep(4000);} catch(InterruptedException e) {}
+		
+		Thread plusThread3 = new PlusThread(myData); // 아쉬우니 대조군으로 +1 된 Thread3 print
+		plusThread3.setName("plusThread3");
+		plusThread3.start();
 		
 	// 문서의 끝	
 	}

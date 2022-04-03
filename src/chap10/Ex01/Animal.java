@@ -11,7 +11,7 @@ class Dog_sub extends Dog {
 class Tiger extends Animal {
 	int leg;
 	
-	void tigereat() {
+	void tigerEat() {
 		System.out.println("호랑이는 다른 동물을 잡아 먹습니다");
 	}
 }
@@ -19,7 +19,7 @@ class Tiger extends Animal {
 class Dog extends Animal {
 	int dog;
 	
-	void dogeat() {
+	void dogEat() {
 		System.out.println("개는 잡식성 이다 ");
 	}
 }

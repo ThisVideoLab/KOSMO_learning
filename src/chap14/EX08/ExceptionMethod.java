@@ -24,8 +24,8 @@ public class ExceptionMethod {
 		
 		//7. 메서드 호출
 		try {
-			aa.abc();	
-		}catch (NumberFormatException e) {
+			aa.abc();	// 클래스 AA의 내부 메서드를 돌고 돌아 결국 "10A"가 입력됨.
+		}catch (NumberFormatException e) { // NumberFormatException 발생
 			System.out.println("예외가 발생하였습니다.");
 			e.printStackTrace();
 		}

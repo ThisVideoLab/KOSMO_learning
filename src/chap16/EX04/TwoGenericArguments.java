@@ -11,7 +11,7 @@ class KeyValue<K,V>{
 		return key;
 	}
 	
-	public void setKey(K Key) {
+	public void setKey(K key) {
 		this.key = key;
 	}
 	
@@ -40,7 +40,7 @@ public class TwoGenericArguments {
 		
 		KeyValue <Integer, String> kv2 = new KeyValue();
 		kv2.setKey(404);
-		kv2.setValue("not fond (요청한 페이지를 찾을 수 없습니다.");
+		kv2.setValue("not 요청한 페이지를 찾을 수 없습니다.");
 		System.out.println(kv2.getKey());
 		System.out.println(kv2.getValue());
 		System.out.println("===============");

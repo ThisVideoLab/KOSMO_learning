@@ -1,7 +1,7 @@
 package chap14.EX01;
 
 //1. Exception이 예외 친구들 중에선 최상위 클래스임.
-//2. 
+//2. 그러나 모든 예외를 처리해버리므로, 맨 마지막에 처리하는 것이 좋음.
 
 public class ArrayException_2 {
 
@@ -23,7 +23,5 @@ public class ArrayException_2 {
 		}	
 		System.out.println("프로그램을 종료합니다");
 		
-		
 	}
-
 }

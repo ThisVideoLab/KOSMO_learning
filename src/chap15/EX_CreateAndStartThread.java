@@ -32,7 +32,7 @@ class SMIFileRunnable implements Runnable{   // 인터페이스
 	   @Override
 	   public void run() {
 	      // 자막번호 출력
-		  String [] col2Arr = {"홍길동", "40  ", "100 ", "70  ", "50  "};
+		  String [] col2Arr = {"홍길동", "40   ", "100  ", "70   ", "50   "};
 	      try {Thread.sleep(100);} catch (InterruptedException e1) {}
 	         
 	      for (int i = 0 ; i < col2Arr.length ; i++) {
@@ -61,7 +61,7 @@ public class EX_CreateAndStartThread {
 	      Thread threadCol3 = new Thread( new Runnable() {
 				public void run() {
 		      // 1. 자막번호 출력
-		      String [] col3Arr = {"이순신", "50  ", "90  ", "60  ", "70  "};
+		      String [] col3Arr = {"이순신", "50   ", "90   ", "60   ", "70   "};
 		      try {Thread.sleep(200);} catch (InterruptedException e1) {}
 		         
 		      for (int i = 0 ; i < col3Arr.length ; i++) {
@@ -82,6 +82,7 @@ public class EX_CreateAndStartThread {
 	         System.out.println(col3Arr[i]);
 	         try {Thread.sleep(500);} catch (InterruptedException e) {}
 	         }
+	      System.out.println();
 	      System.out.println("=================");
 	      System.out.println("출력이 완료되었습니다.");
 		   };}

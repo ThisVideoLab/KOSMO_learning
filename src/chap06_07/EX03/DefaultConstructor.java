@@ -37,7 +37,7 @@ class B {
 class C {
 	int m ;
 	
-					// 기본 생성자는 생략됨. 
+		C(){}	// 기본 생성자는 생략됨. 
 	
 	C ( int c ) {    //  생성자의 인풋 값을 받아서 메모리의 기본값으로 m 변수 값을 오드 시킨다 
 		m =  c;
@@ -53,9 +53,7 @@ class C {
 class D {
 	int m , n , l ;
 	
-	D () {    // 기본 생산자
-		
-	}
+	D () {}    // 기본 생산자
 	
 	D(int m , int n ){  // 매개변수가 2개인 생성자
 		this.m=m;          //  this : 자기 자신의 객체 , 지역변수가 아니라 필드의 변수를 알려줌 
@@ -120,14 +118,14 @@ public class DefaultConstructor {
 		
 		D d = new D();
 		
-		d.work();
+		d.work();// 아무런 입력값이 없기에, a,b,c 모두 초기값 0이 출력됨.
 		
 		D dd = new D(2 , 3 , 4);
 		
 		dd.work();
 		
 		D ddd = new D(1 , 2) ;
-		ddd.work();
+		ddd.work(); //a,b 값만 입력되고, c값은 입력되지 않았기에 초기값 0을 출력함/
 			
 		
 		

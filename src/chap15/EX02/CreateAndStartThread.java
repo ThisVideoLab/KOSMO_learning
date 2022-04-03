@@ -22,19 +22,14 @@ class SMIFileThread extends Thread{
 	}
 }
 
-
-
-
 public class CreateAndStartThread {
-
 	public static void main(String[] args) {
 		
-		//0. 쓰레드 작동
+		//1. 쓰레드 작동시켜 자막 파트를 동시 출력함 
 		Thread sm = new SMIFileThread(); // 주의: run()을 직접 호출하면 쓰레드가 작동하는 것이 아니고 메서드만 출력함.
 		sm.start();						 // start(): 스레드를 작동하기 위해 메모리 할당 후 run()를 호출 : 쓰레드로 작업됨.
 		
-		
-		//1. 첫번째 쓰레드 (main Thread에서 작동) - 비디오 프레임 출력
+		//2. 첫번째 쓰레드 (main Thread에서 작동) - 비디오 프레임 출력
 		int [] intArr = {1,2,3,4,5};
 		
 		// 비디오 프레임 출력
@@ -43,9 +38,8 @@ public class CreateAndStartThread {
 			
 			// 작업지연 (0.2초 딜레이)
 			try {Thread.sleep(200);}catch (InterruptedException e){ }
-			
 		}
 		
+	//문서의 끝
 	}
-
 }

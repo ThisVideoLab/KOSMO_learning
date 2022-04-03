@@ -20,13 +20,19 @@ public class ThreadProperties_2 {
 		// (낮음:0) ~ (default:5) ~ (높음:10)
 	for (int i = 0; i < 3; i++) {
 		Thread thread = new Thread();
-		System.out.print(thread.getName()+ "\t"); // 쓰레드 이름 출력
+		System.out.print(thread.getName()+ "\t"); // 쓰레드 이름 출력, \t 는 탭띄어쓰기
 		System.out.println(thread.getPriority());
 		thread.start();
 	}
+	
 	//1초 지연
-	try {Thread.sleep(1000);}catch (InterruptedException e){}
-		
+	try {Thread.sleep(3000);}catch (InterruptedException e){} 
+	// 여기서 시간을 벌어주는 동안 뒤에 2. 과정의 계산이 끝나고 9번째 슬라이드가
+	// 우선순위 10을 배정 받아 리스트에서 먼저 출력됨. 이 과정에서 다른 쓰레드들의 순서가
+	// 어긋나서 무작위에 가깝게 출력되는 것은 큰 슬픔
+	
+	System.out.println();
+	
 	//2. 우선순위 직접 지정
 	for (int i = 0; i < 10; i++) {
 		Thread thread = new MyThread();

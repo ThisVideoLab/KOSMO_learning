@@ -65,7 +65,8 @@ public class Object_generic {
 		System.out.println(goods1.getT()); // 제네릭에서는 다운 캐스팅을 할 필요가 없이 그냥 불러다 쓰는 것이 가능.
 		
 		Goods<Pencil> goods2 = new Goods<Pencil>();
-		goods2.setT(new Pencil ("볼펜1", 1000));
+		goods2.setT(new Pencil ("볼펜1", 2000));
+		System.out.println(goods2.getT());
 		
 	// 문서의 끝
 	}

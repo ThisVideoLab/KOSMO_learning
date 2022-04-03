@@ -20,8 +20,6 @@ class MyThread extends Thread{ // 스레드 작동을 위한 클래스
 	}
 }
 
-
-
 public class ThreadProperties_3 {
 	public static void main(String[] args) {
 
@@ -45,7 +43,7 @@ public class ThreadProperties_3 {
 		
 	System.out.println("===================");
 	try {Thread.sleep(3500);}catch (InterruptedException e) {}
-	System.out.println();System.out.println();
+	System.out.println();
 	
 	//3. 마찬가지로 5초간 작동하는 데몬 쓰레드를 똑같은 형태로 생성
 	Thread thread2 = new MyThread();
@@ -56,12 +54,7 @@ public class ThreadProperties_3 {
 	//4. 3.5초 후에 main Thread 종료하는 구문도 추가
 	try {Thread.sleep(3500);}catch (InterruptedException e) {} 
 	System.out.println("3.5초에 main Thread 종료"); // 3.5초에 데몬 쓰레드가 바로 날려버림
-	
-	
-	
-
 		
 	// 문서의 끝
 	}
-
 }

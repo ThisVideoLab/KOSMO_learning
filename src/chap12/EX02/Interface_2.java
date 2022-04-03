@@ -25,7 +25,12 @@ class BB implements AA {
 public class Interface_2 {
 
 	public static void main(String[] args) {
-
+		
+		AA aa1 = new BB(); // 클래스 AA에 대해 자식 클래스 BB를 계승하는 aa1라는 이름의 참조변수 생성
+		
+		aa1.cry();
+		aa1.run();
+		
+	//문서의 끝
 	}
-
 }

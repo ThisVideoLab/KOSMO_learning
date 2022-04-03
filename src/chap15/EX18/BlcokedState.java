@@ -8,20 +8,19 @@ class MyBlockTest{
 	//2. 3개의 쓰레드 필드 생성
 	Thread t1 = new Thread("thread1") {
 		public void run() {
-			
-			mc.sysncMethod();
+			mc.syncMethod();
 		};
 	};
 	Thread t2 = new Thread("thread2"){
 		public void run() {
 			try {Thread.sleep(1000);} catch (InterruptedException e) {} // 이걸 꽂아넣으면 돌아가는 순서를 변경할 수 있음.
-			mc.sysncMethod();
+			mc.syncMethod();
 		};
 	};
 	
 	Thread t3 = new Thread("thread3"){
 		public void run() {
-			mc.sysncMethod();
+			mc.syncMethod();
 		};
 	};
 	void startALL() {
@@ -30,7 +29,7 @@ class MyBlockTest{
 		t3.start();
 	}
 	class MyClass{ // 내부 클래스
-		synchronized void sysncMethod() { // 동기화 메서드 : 키를 가진 쓰레드만 접근 가능함
+		synchronized void syncMethod() { // 동기화 메서드 : 키를 가진 쓰레드만 접근 가능함
 			try {Thread.sleep(100);} catch (InterruptedException e) {}
 			System.out.println("=====" + Thread.currentThread().getName() + "=====");
 			System.out.println("thread1 -> " + t1.getState());

@@ -18,8 +18,8 @@ class Bb{                     // this 키를 사용하는 경우
 	int m ;
 	int n ;
 	void init ( int m , int n ) {
-		this.m = m;                  // this 키를 사용하는 경우 m <==  필드 m
-		this.n = n;					 // this 키를 사용하는 경우 n <==  필드 n
+		this.m = m;                  // this 키를 사용하는 경우 m ==>  필드 m에 값을 토스
+		this.n = n;					 // this 키를 사용하는 경우 n ==>  필드 n에 값을 토스
 	}
 	
 }

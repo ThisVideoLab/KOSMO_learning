@@ -12,27 +12,25 @@ class BB{
 					//5. 컴파일러가 랜덤한 이름으로 자동 할당하고 말아버림. 일회용이니까
 			public void cry(){System.out.println("멍멍");};
 			public void fly(){System.out.println("개는 날지 못합니다");};
-		};
-		void abc() {
-			aa.cry();
-			aa.fly();
-		}
-	}	
-	
-	class CC implements AA { //6. class C는 A 인터페이스의 메서드를 구현한 클래스.
-
-		@Override
-		public void cry() {
-			System.out.println("멍멍");
-		}
-
-		@Override
-		public void fly() {
-			System.out.println("날지 못합니다");
-		} // # class CC는 A 인터페이스의 메소드를 구현한 클래스임 
-		
-		
+	};
+	void abc() {
+		aa.cry();
+		aa.fly();
 	}
+}	
+	
+class CC implements AA { //6. class C는 A 인터페이스의 메서드를 구현한 클래스.
+
+	@Override
+	public void cry() {
+		System.out.println("멍멍");
+	}
+
+	@Override
+	public void fly() {
+		System.out.println("날지 못합니다");
+	} // # class CC는 A 인터페이스의 메소드를 구현한 클래스임 
+}
 
 
 public class AnonymousClass_2_1 {
@@ -41,6 +39,14 @@ public class AnonymousClass_2_1 {
 
 		BB bb = new BB();
 		bb.abc();
+		
+		
+		System.out.println("===========");
+		CC cc = new CC();
+		// cc.abc(); // abc() 메서드는 BB 클래스에만 있는 것이고, AA와 CC에는 없어서 오버라이딩 못함.
+		cc.cry(); // 대신에 인터페이스 AA에 있는 메서드 2개를 오버라이딩해서 메서드 출력 나으
+		cc.fly();
+		
+	//문서의 끝
 	}
-
 }

@@ -1,8 +1,5 @@
 package chap16.EX02;
 
-
-
-
 //5개의 객체를 Object를 사용해서 저장하고 캐스팅으로 불러서 출력해봐라.
 
 class Student{
@@ -74,7 +71,6 @@ class ObjectInfo{
 	public Object getObject() {
 		return object;
 	}
-	
 	public void setObject(Object object) { 
 		this.object = object; 
 	}
@@ -83,7 +79,6 @@ class ObjectInfo{
 
 public class EX_UsingObject {
 	public static void main(String[] args) {
-
 		
 		ObjectInfo obInfo1 = new ObjectInfo(); 
 		obInfo1.setObject(new Student("곤잘레스 로드리게스","thisvideo",1234));
@@ -101,10 +96,6 @@ public class EX_UsingObject {
 		obInfo4.setObject(new Banana("델몬트 바나나","초록빛이 도는 노란색", 3000)); 
 		System.out.println((Banana) obInfo4.getObject());
 		
-		
-		
-		
 		// 문서의 끝
 	}
-
 }

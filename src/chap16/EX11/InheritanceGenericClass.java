@@ -35,9 +35,10 @@ public class InheritanceGenericClass {
 
 		//1. 부모 제네릭 클래스 생성
 		
-		// Parent<String> p = new Parent<String>(); // 전체 완성된 구문 
+		//
 		
 		Parent<String> p = new Parent<>(); //앞 뒤에 생성자를 호출할 경우 생략 가능
+		// Parent<String> p = new Parent<String>(); // 원래 윗 문장의 완전한 형태이지만, 우변의 String이 중복으로 생략됨 
 		p.setT("부모 제너릭 클래스");
 		System.out.println(p.getT());
 		Parent<Integer> il = new Parent();

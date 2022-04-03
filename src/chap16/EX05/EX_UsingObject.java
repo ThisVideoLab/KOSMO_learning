@@ -1,9 +1,5 @@
 package chap16.EX05;
 
-
-
-
-
 //5개의 객체를 Object를 사용해서 저장하고 캐스팅으로 불러서 출력해봐라.
 
 class Student<N,I,P>{
@@ -14,15 +10,12 @@ class Student<N,I,P>{
 	public N getName() {
 		return name;
 	}
-	
 	public void setName(N name) {
 		this.name = name;
 	}
-	
 	public I getId() {
 		return id;
 	}
-	
 	public void setId(I id) {
 		this.id = id;
 	}
@@ -34,8 +27,6 @@ class Student<N,I,P>{
 		this.pass = pass;
 	}
 }	
-
-
 
 public class EX_UsingObject {
 	public static void main(String[] args) {

@@ -1,7 +1,7 @@
 package chap16.EX01;
 
 
-// Generice1의 문제점 - 상품을 저장할 공간을 매번 생성해줘야 함
+// Generic 사용 전 문제점 - 상품을 저장할 공간을 매번 생성해줘야 함
 // 객체를 담을 클래스를 만드는 경우, 매번 객체를 생성할 때마다 그 객체를 담을 클래스를 만들어줘야 함.
 // 객체를 저장할 클래스를 생성해서 객체 정보를 담을 수 있다, 이는 새로운 상품이 추가될 땨ㅐ마다 그 상품을 담을 클래스를 생성해 줘야 한다는 것. 고로 코드가 굉장히 복잡해짐.
 
@@ -21,7 +21,7 @@ class Apple{
 
 //1. Apple을 담을 수 있는 클래스 생성.
 class Goods1{ // 상품1: 사과 상품을 담은 클래스
-	private Apple apple = new Apple("사과", 1000);
+	private Apple apple = new Apple("사과", 500);
 	
 	public Apple getApple() {
 		return apple;
@@ -48,7 +48,7 @@ class Pencil { // 연필 클래스
 }
 
 class Goods2{  // object를 사용해서 모든 상품을 저장할 수 있음
-	private Pencil pencil = new Pencil("연필",3000); 
+	private Pencil pencil = new Pencil("연필",2000); 
 	
 	public Pencil getPencil() {
 		return pencil;

@@ -19,15 +19,27 @@ class abc implements AutoCloseable{ //5. # ÇÊµå, »ý¼ºÀÚ, ¿À¹ö¶óÀÌµù ¼øÀ¸·Î ÀÏÁ¤Ç
 	int eng;
 	int math;
 	double avg; // Æò±Õ °è»ê 
-	String age;
 	
 	abc(String name, int studentID, int kor, int eng, int math, double avg){ //»ý¼ºÀÚÀÇ ¸Å°³º¯¼ö·Î String °ªÀ» ¹Þ¾Æ¼­ ¸Þ¸ð¸®·Î ·ÎµùÇÔ.
 		this.name = name; this.studentID = studentID; this.kor =kor;
 		this.eng = eng; this.math = math; this.avg = avg;
 	}
-	
 	@Override
-	public void close() throws Exception { 
+	public void close() throws Exception {
+		
+		System.out.println("========================");
+		System.out.println("ÀÌ   ¸§: " + name ); // ÀÔ·ÂÀÌ Àß µÇ¾ú´ÂÁö ÇÑ¹ø È®ÀÎÂ÷ Ãâ·Â
+		System.out.println("ÇÐ   ¹ø: " + studentID );
+		System.out.println("±¹¾îÁ¡¼ö: " + kor );
+		System.out.println("¿µ¾îÁ¡¼ö: " + eng );
+		System.out.println("¼öÇÐÁ¡¼ö: " + math );
+		System.out.println("Æò   ±Õ: " + avg );
+		System.out.println();
+		System.out.println("========================");
+		System.out.println("¸®¼Ò½º ÇØÁ¦¸¦ ½ÃÀÛÇÕ´Ï´Ù.");
+		System.out.println("========================");
+		System.out.println();
+		
 		if(name != null) {
 			name = null; 
 			System.out.println(" nameÀÇ ¸®¼Ò½º°¡ ÇØÁ¦ µÇ¾ú½À´Ï´Ù.");
@@ -54,8 +66,6 @@ class abc implements AutoCloseable{ //5. # ÇÊµå, »ý¼ºÀÚ, ¿À¹ö¶óÀÌµù ¼øÀ¸·Î ÀÏÁ¤Ç
 			
 			// ¼±»ý´Ô ¹æ¹ý if (name !=null | studentID !=null | ÀÌ·±½ÄÀ¸·Î or¸¦ »ç¿ëÇÔ
 			// name = null, studentID = 0; kor = 0; ÀÌ·±½ÄÀ¸·Î ¸¸µê.
-			
-			
 			System.out.println("========================");
 		}
 	}
@@ -87,7 +97,14 @@ public class TrywithResource_3 {
 		
 		//1. °´Ã¼ÀÇ ¸ðµç ÇÊµå¸¦ ÃÊ±âÈ­ÇÏ°í ÀÚµ¿À¸·Î close ();
 		
-		try(abc abc1 = new abc("Ã¶¼ö", 1111, 72, 83, 99, (72+83+99)/3)){ // String name, int studentID, int kor, int eng, int math, double avg
+		String name = "Ã¶¼ö";
+		int studentID = 1111;
+		int kor = 72;
+		int eng = 83;
+		int math = 99;
+		double avg = (kor + eng + math)/3;
+		
+		try(abc abc1 = new abc(name, studentID, kor, eng, math, avg)){ // String name, int studentID, int kor, int eng, int math, double avg
 		}catch (Exception e){
 			System.out.println("¿¹¿Ü°¡ ¹ß»ýµÇ¾ú½À´Ï´Ù.");
 		}finally { // ºí¶ô¿¡ a.close() ¸Þ¼Òµå¸¦ ÀÚµ¿À¸·Î È£ÃâµÊ.
@@ -95,40 +112,33 @@ public class TrywithResource_3 {
 		System.out.println("ÀÚµ¿ ÃÊ±âÈ­ Á¾·á");
 		
 		
-		System.out.println("===================");
+		System.out.println("========================");
 		
 		
-		//2. ¼öµ¿ close (), finally ºí·°¿¡¼­ close() Á÷Á¢ È£Ãâ
+		//2 ¼öµ¿ ¸®¼Ò½º ÇØÁ¦ »ç¿ë
 		
-		System.out.println("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä !");
-	
-		abc a2 = null;
-		
-		
-		 try {
-			 a2 = new abc ("Ã¶¼ö", 1111, 72, 83, 99, ((72+83+99)/3)){
-		 }catch (IOException e){
-			 e.printStackTrace(); // try {} ºí¶ô¿¡¼­ ¿¹¿Ü°¡ ¹ß»ýµÉ °æ¿ì¿¡ ÀÚ¼¼ÇÑ Á¤º¸¸¦ Ãâ·ÂÇÔ
-		 }finally { //°´Ã¼¸¦ »ç¿ë ÈÄ¿¡ ¸Þ¸ð¸® ¿µ¿ª¿¡¼­ »èÁ¦½ÃÄÑ ÁÜ.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-			 //              ¸®¼Ò½º ÇØÁ¦: isr2.close(); À» ³Ö¾îÁà¾ß ÇÔ. 
-			 if (name != null){  	// ¼±»ý´Ô ¹æ¹ý if (name !=null | studentID !=null | ÀÌ·±½ÄÀ¸·Î or¸¦ »ç¿ëÇÔ
-									// name = null, studentID = 0; kor = 0; ÀÌ·±½ÄÀ¸·Î ¸¸µê.
-				try {
-					a2.close(); // ÀÏ¹Ý¿¹¿Ü : IOException	 
-				}catch (IOException e){
-					e.printStackTrace();                                                                                                                                                                                                                                    
-				}
-			 }
-		 }
-		 
-
+		abc abc2 = new abc("¿µ¼ö",1112,73,83,97,(kor+eng+math)); 
+		// ÀÚµ¿ ¸®¼Ò½º ÇØÁ¦ ÀýÂ÷¿Í´Â ´Ù¸£°Ô ¸Å°³º¯¼ö¸¦ Æ÷ÇÔÇÑ °´Ã¼ »ý¼ºÀÌ ¹Ýµå½Ã ÇÊ¿äÇÑ ÀÌÀ¯´Â
+		// try ³»ºÎ¿¡¼­ »õ °´Ã¼¸¦ »ý¼ºÇÏ¸é, try¹®ÀÌ Á¾·áµÈ ÈÄ¿¡ ±× °´Ã¼°¡ try¹® Á¾·á¿Í ÇÔ²²
+		// ¼Ò¸êµÇ±â ¶§¹®ÀÓ. °í·Î ÈÄÇàÀÇ finally¿¡¼­ abc2 °´Ã¼¸¦ Ã£À» ¼ö ¾ø¾î¼­ ¿¡·¯°¡ ¹ß»ýÇÔ
+			
+		try{abc2 = new abc(name, studentID, kor, eng, math, avg);
+		}catch (Exception e){
+		e.printStackTrace();
+		System.out.println("¿¹¿Ü°¡ ¹ß»ýµÇ¾ú½À´Ï´Ù.");
+		}finally { // ¼öµ¿ ¸®¼Ò½º ÇØÁ¦ ±¸¹® ½ÃÀÛ
+			if( abc2.name != null|| abc2.studentID != 0|| abc2.kor != 0|| abc2.eng != 0 || abc2.math != 0||abc2.avg != 0.0) {
 				
-		
-		
-		
-		
-		
-		// ¹®¼­ÀÇ ³¡
+				try {
+					System.out.println("º¯¼ö Áß ÇÏ³ª ÀÌ»óÀÌ ÃÊ±âÈ­µÇÁö ¾Ê¾Ò½À´Ï´Ù.");
+					abc2.close();
+				}catch (Exception e) {
+					e.printStackTrace();
+				}finally {
+					System.out.println("¼öµ¿ ¸®¼Ò½º ÇØÁ¦ÀýÂ÷¸¦ Á¾·áÇÕ´Ï´Ù");
+				}
+			}
+		}	
+	// ¹®¼­ÀÇ ³¡
 	}
-
 }

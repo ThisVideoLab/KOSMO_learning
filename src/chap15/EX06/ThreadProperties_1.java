@@ -8,9 +8,9 @@ public class ThreadProperties_1 {
 		//1. 객체 가져오기 (currentThread()) // 쓰레드 수 (activeCount())
 			//static
 		Thread curThread = Thread.currentThread(); // main Thread
-		// 클래스 (타입) 참조변수
+		// 클래스 (타입) 참조변수 = 클래스명.메소드명
 		System.out.println("현재 스레드의 이름 : " + curThread.getName());
-		System.out.println("현재 스레드의 이름 : " + curThread.activeCount());
+		System.out.println("동작하는 스레드의 수 : " + curThread.activeCount());
 		
 		
 		System.out.println("==========================================");

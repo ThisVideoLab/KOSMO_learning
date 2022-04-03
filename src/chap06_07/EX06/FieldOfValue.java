@@ -25,14 +25,14 @@ class Bb{   // 2. setter를 통해서 객체의 필드에 값을 할당
 	int age ;
 	String mail;
 	
-	void setname(String a) {
+	void setName(String a) {
 		name = a;
 	}
 	
-	void setage(int a) {
+	void setAge(int a) {
 		age = a;
 	}
-	void setmail(String a) {
+	void setMail(String a) {
 		mail = a;
 	}
 	
@@ -86,9 +86,9 @@ public class FieldOfValue {
 		// 2.  setter 사용
 		Bb bb = new Bb();
 		
-		bb.setname("내이름");
-		bb.setage(15);
-		bb.setmail("bbb@bbb.com");
+		bb.setName("내이름");
+		bb.setAge(15);
+		bb.setMail("bbb@bbb.com");
 		
 		bb.print();
 		System.out.println("=======================");

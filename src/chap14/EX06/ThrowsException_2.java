@@ -12,13 +12,12 @@ public class ThrowsException_2 {
 
 	public static void main(String[] args) throws ClassNotFoundException {
 
-		// 정상적으로 파일이 존재합니다. ClassNotFoundException이 발생하지 아니함.
-		Class cls1 = Class.forName("java.lang.object");
+		//정상적으로 파일이 존재 합니다. ClassNotFoundException 이 발생되지 않는다. 
+		Class cls = Class.forName("java.lang.Object");
 		
-		
-		// 정상적으로 파일이 존재하지 않습니다. ClassNotFoundException이 발생하지 아니함.
-		Class cls2 = Class.forName("java.lang.object00");
-		
+		////정상적으로 파일이 존재하지 않는다. ClassNotFoundException 이 발생된다.  
+		Class cls2 = Class.forName("java.lang.Object00");
+
 	}
 
 }

@@ -15,8 +15,8 @@ class Abc{
 		System.out.println( i + j);
 		
 		int l;                  // 지역변수 이므로 강제 초기화가 되지 않는다. (Stack)
-//		l = 0;                  // 지역변수는 반드시 초기값을 할당 
-//		System.out.println(l); 
+		l = 0;                  // 지역변수는 반드시 값을 할당 한뒤에 출력해야함 
+		System.out.println(l);  // 만약 값 설정 안하고 출력하면 에러뜸
 	}
 }
 
@@ -28,7 +28,7 @@ public class FieldComponent {
 
 	public static void main(String[] args) {
 		
-		//클래서를 활용해서 객체(abc) 생성
+		//클래스를 활용해서 객체(abc) 생성
 		Abc abc = new Abc();      // abc객체 생성
 		System.out.println(abc.m);
 		System.out.println(abc.n);

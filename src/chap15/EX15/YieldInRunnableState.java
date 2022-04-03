@@ -8,14 +8,14 @@ class MyThread extends Thread{
 	boolean yieldFlag;
 	@Override
 	public void run() {
-			while (true) {
-				if(yieldFlag) { // yieldFlag가 True일 때 쓰레드를 양보해줌
-					Thread.yield(); // 쓰래드를 양보하는 구문
-				}else { // yieldFalg가 false일 경우에는 스레드 정보를 출력해줌.
-					System.out.println(getName() + "실행");
-					for (long i = 0; i <100000000; i++) {} // 이 과정때문에 위에 겟네임이 바로 안찍힘.
-				}
+		while (true) {
+			if(yieldFlag) { // yieldFlag가 True일 때 쓰레드를 양보해줌
+				Thread.yield(); // 쓰래드를 양보하는 구문
+			}else { // yieldFalg가 false일 경우에는 스레드 정보를 출력해줌.
+				System.out.println(getName() + "실행");
+				for (long i = 0; i <1000000000L; i++) {} // 이 과정때문에 위에 겟네임이 바로 안찍힘.
 			}
+		}
 	}
 }
 
@@ -37,12 +37,10 @@ public class YieldInRunnableState {
 	
 	// 쓰래드 6초 지연 (1초마다 1번씩 양보 발생)
 	for(int i = 0; i < 6; i++) {
-		try{Thread.sleep(10);}catch(InterruptedException e) {}
+		try{Thread.sleep(11);}catch(InterruptedException e) {}
 		thread1.yieldFlag =! thread1.yieldFlag; // 참일땐 거짓을 저장하고 거짓일땐 참을 저장함
 		thread2.yieldFlag =! thread2.yieldFlag; // 참일땐 거짓을 저장하고 거짓일땐 참을 저장함	
 	}
-	
-		
 		
 	// 문서의 끝
 	}

@@ -22,6 +22,7 @@ public class Interface_5 {
 		A a2 = new A() {
 			public void run() {
 				System.out.println("»Œ»Œ ≥≥¥œ¥Ÿ");
+				a1.run();
 			}
 		};
 		a2.run();
