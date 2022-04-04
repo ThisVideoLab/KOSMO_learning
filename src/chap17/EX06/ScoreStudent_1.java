@@ -12,8 +12,7 @@ import java.util.Scanner;
 
 
 class Student{
-	int score;
-
+	int score; // 점수를 입력하면 필드의 값에 할당함. // 객체 생성 후 직접 2. praivate (생성자, setter, getter)
 }
 
 public class ScoreStudent_1 {
@@ -28,9 +27,9 @@ public class ScoreStudent_1 {
     
         boolean run = true;
         int studentNum = 0;
-        Scanner scanner = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); // 콘솔을 통해 인풋값을 받겠다
         
-        while(run) {
+        while(run) { //true일 동안 루프가 돌아감. 
             System.out.println("----------------------------------------------------");
             System.out.println("1.학생수 | 2.점수입력 | 3.점수리스트 | 4.분석 | 5.종료");
             System.out.println("----------------------------------------------------");
@@ -40,7 +39,7 @@ public class ScoreStudent_1 {
             if(selectNo == 1) {
                 System.out.println("학생수를 입력하세요 : ");
                 	//코드 작성  // 학생수에 따라서 capacity 할당해줄 것
-                studentNum = scanner.nextInt();
+                studentNum = scanner.nextInt(); // 
                 System.out.println("입력완료");
                 for(int i = 0; i<studentNum; i++) {
                 	arr.add(new Student());
@@ -49,9 +48,9 @@ public class ScoreStudent_1 {
             		//코드작성 // 10명 값을 , 으로 입력함
             	System.out.println("학생수 만큼 점수를 입력하시오 : ");
             	for(int i=0; i<studentNum; i++) {
-            		System.out.println((i+1)+"번 학생 점수를 입력하세요");
-            		int inputScore =scanner.nextInt();
-            		studentscore.add(inputScore);
+            		System.out.println((i+1)+"번 학생 점수를 입력하세요"); // 객체를 생성해서 인풋받은 값을 학생수만큼 입력함 
+            		int inputScore =scanner.nextInt(); // 학생점수를 입력 받아서 필드에 값을 할당
+            		studentscore.add(inputScore); //  ArrayList에 필드에 값을 할당한 객체를 ArrayList에 저장
             		System.out.println("입력완료");
             	}
             	
@@ -65,9 +64,8 @@ public class ScoreStudent_1 {
             	int sum = 0;
             	Double avg = 0.0;
             	for ( int i =0 ; i < arr.size(); i++) {		
-        			if ( studentscore.get(i) > max) {		// 방의 값이 max 변수의 값보다 클때 
-        				max = studentscore.get(i);			// max 변수에 큰값을 저장 
-        			}
+        			if ( studentscore.get(i) > max) {	// i 방의 값이 max 변수의 값보다 클때 
+        			}							//max 변수 최종 적용 후에 
         		}
             	
             	for ( int i =0 ; i < arr.size(); i++) {	
@@ -79,7 +77,7 @@ public class ScoreStudent_1 {
             	
             } else if(selectNo == 5) {
             	//코드작성
-            	run = false;
+            	run = false; // run = true일 동안 계속 돌고, false가 되면 while문이 종료됨
 				System.out.println("프로그램 종료");
               }
          }
