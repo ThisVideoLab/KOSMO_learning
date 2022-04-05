@@ -101,6 +101,7 @@ public class EX_MemberArrayList {
 		Member memberPark = new Member(1003, "박지손");
 		Member memberHong = new Member(1004, "홍날두");
 		
+		
 		memberArrayList.addMember(memberLee); // 각 개체를 어레이 리스트에 저장
 		memberArrayList.addMember(memberSon);
 		memberArrayList.addMember(memberPark);
