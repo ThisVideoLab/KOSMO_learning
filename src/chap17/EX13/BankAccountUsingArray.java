@@ -40,21 +40,19 @@ class Account extends BankAccountArray{
 	}
 }
 
-class BankAccountArray{
+class BankAccountArray{ 
 	
 }
 
 public class BankAccountUsingArray {
 	
-	private static Account[] actArr = new Account[100];// �迭�� ����ؼ� Account ���� ���
 	private static Scanner scan = new Scanner(System.in);
-	
 	private static ArrayList<Account> accountlist = new ArrayList<Account>();
 	private static HashSet<String> anumSet = new HashSet<>();
 	
 	private static void createAccount() {
-		// �ڵ� �ۼ�: 1. ���»��� ��ĳ�ʷ� 1.���¹�ȣ2.�̸� .�ʱ� ���� �ݾ� �Է�
-		// �迭 ��ü�� ������
+		// 코드 작성: 1. 계좌생성 스캐너로 1.계좌번호2.이름 .초기 통장 금액 입력
+		// 배열 객체에 저장함
 		
 		System.out.println("Please enter your new bank account number");
 		String input = "";
@@ -62,8 +60,8 @@ public class BankAccountUsingArray {
 		while(run) {
 			input = scan.next();
 			if(anumSet.contains(input)){
-				System.out.println("The enterd account number is incorrect.");
-				System.out.println("Please enter correct account number.");
+				System.out.println("The enterd account number is already existed.");
+				System.out.println("Please enter anohter account number.");
 			}else {
 				run=false;
 			}
@@ -81,44 +79,47 @@ public class BankAccountUsingArray {
 		System.out.println(" account number: " + input + " | owner: " + owner + " | blance: " + balance);
 		System.out.println();
 	}
+	
+	
 	private static void accountList() {
-		// �迭�� ����� ��ü�� ������ �� ��������.
-		// ���� ��� ��� ���¹�ȣ �̸� �ݾ��� ���� ���
+		// 배열에 저장된 객체를 꺼내서 쭉 나열해줌.
+		// 계좌 목록 출력 계좌번호 이름 금액을 쭉쭉 출력
 		for(int i = 0; i< accountlist.size(); i++) {
 			System.out.println(accountlist.get(i));
 		}
 		System.out.println();
 	}
 	private static void deposit() {
-		// ���¹�ȣ �Է¹ޱ�
-		int balNum = 0;
-		
-		String input = "";
-		Boolean run =true;
-		int deposit=0;
-		System.out.println("please enter the account number to withdraw.");
-		
-		// ���¹�ȣ�� ����Ʈ�� �����ϴ��� Ȯ�ΰ� index ��ȣ �ޱ�
-		while(run) {
-			input = scan.next();
+		// 계좌번호 입력받기
+			int balNum = 0;
 			
-			for (int i = 0; i< accountlist.size(); i++) { // ��� �濡 ���ؼ� �˻� ����
-				Account tempList = accountlist.get(i);
-				if(tempList.getAnum().equals(input)){
-					balNum = i;
-					run=false;
-				}else {
-				System.out.println("The enterd account number is incorrect.");
-				System.out.println("Please enter correct account number.");
+			String input = "";
+			Boolean run =true;
+			int deposit=0;
+			int k = 0;
+			System.out.println("please enter the account number to deposit.");
+			
+			// 계좌번호가 리스트에 존재하는지 확인고 index 번호 받기
+			while(run) {
+				if(k>0) {
+					System.out.println("The enterd account number is incorrect.");
+					System.out.println("Please enter correct account number.");
 				}
+				input = scan.next();
+				for (int i = 0; i< accountlist.size(); i++) { // 모든 방에 대해서 검사 실행
+					Account tempList = accountlist.get(i);
+					if(tempList.getAnum().equals(input)){
+						balNum = i;
+						run=false;
+					}
+				}
+				k++;
 			}
-		}
-		
-		//���±ݾ� �ҷ�����
+		//계좌금액 불러오기
 		Account curBal = accountlist.get(balNum);
 		curBal.getBalance();
 		
-		// �ݾ��Է¹ޱ�
+		// 금액입력받기
 		System.out.println("Enter the amount to be depositted");
 		run = true;
 		while(run){
@@ -131,41 +132,43 @@ public class BankAccountUsingArray {
 			}
 		}
 		
-		//�����ϱ�
+		//정산하기
 		curBal.setBalance(curBal.getBalance() + deposit);
 		System.out.println("The deposit amount is $" + deposit + ". The balance is $" + curBal.getBalance()+ ".");
 		System.out.println();
 	}
 	private static void withdraw() {
-		// ���¹�ȣ �Է¹ޱ�
+		// 계좌번호 입력받기
 		int balNum = 0;
 		
 		String input = "";
 		Boolean run =true;
 		int debit=0;
+		int k = 0;
 		System.out.println("please enter the account number to withdraw.");
 		
-		// ���¹�ȣ�� ����Ʈ�� �����ϴ��� Ȯ�ΰ� index ��ȣ �ޱ�
+		// 계좌번호가 리스트에 존재하는지 확인고 index 번호 받기
 		while(run) {
+			if(k>0) {
+				System.out.println("The enterd account number is incorrect.");
+				System.out.println("Please enter correct account number.");
+			}
 			input = scan.next();
-			
-			for (int i = 0; i< accountlist.size(); i++) { // ��� �濡 ���ؼ� �˻� ����
+			for (int i = 0; i< accountlist.size(); i++) { // 모든 방에 대해서 검사 실행
 				Account tempList = accountlist.get(i);
 				if(tempList.getAnum().equals(input)){
 					balNum = i;
 					run=false;
-				}else {
-				System.out.println("The enterd account number is incorrect.");
-				System.out.println("Please enter correct account number.");
 				}
 			}
+			k++;
 		}
 		
-		//���±ݾ� �ҷ�����
+		//계좌금액 불러오기
 		Account curBal = accountlist.get(balNum);
 		curBal.getBalance();
 		
-		// �ݾ��Է¹ޱ�
+		// 금액입력받기
 		System.out.println("Enter the amount to be withdrawn");
 		run = true;
 		while(run){
@@ -178,19 +181,47 @@ public class BankAccountUsingArray {
 			}
 		}
 		
-		//�����ϱ�
+		//정산하기
 		curBal.setBalance(curBal.getBalance() - debit);
 		System.out.println("The withdrawal amount is $" + debit + ". The balance is $" + curBal.getBalance()+ ".");
 		System.out.println();
 	}
 	
-	// �迭���� Account ��ü ���� ano[���¹�ȣ]�� ������ ���¸� ã�Ƽ� ã�� ��ü�� �������� ������.
-	private static Account findAccount(String anb) {
-		Account account = null ; 
-		//�ڵ� �ۼ� 
-		return account; 
-	}
+	// 배열에서 Account 객체 내의 ano[계좌번호]와 동일한 계좌를 찾아서 찾은 객체를 리턴으로 돌려줌.
 	
+	private static void findAccount() { // 이미 findAccount 기능이 각 부분에 구현되이 었어서 이 부분을 검색기능으로 추가하기로 변경
+										// 바로 문구를 출력할 수 있도록 반환 타입을 void로 바꿔줌.
+		Account account = null ; 
+		//코드 작성 
+		int balNum = 0;
+		String input = "";
+		Boolean run =true;
+		int k = 0;
+		System.out.println("please enter the account number to search.");
+		
+		// 계좌번호가 리스트에 존재하는지 확인고 index 번호 받기
+		while(run) {
+			if(k>0) {
+				System.out.println("The enterd account number is incorrect.");
+				System.out.println("Please enter correct account number.");
+			}
+			input = scan.next();
+			for (int i = 0; i< accountlist.size(); i++) { // 모든 방에 대해서 검사 실행
+				account = accountlist.get(i);
+				if(account.getAnum().equals(input)){
+					balNum = i;
+					run=false;
+					
+				}
+			}
+			k++;
+		}
+		account = accountlist.get(balNum); // 여기까지 얻은 결과를 리턴값으로 출력하면 기존에 요구한 기능 구현이 완료됨.
+		System.out.println();
+		System.out.println(account);
+		System.out.println();
+	} 
+
 	
 	public static void main(String[] args) {
 
@@ -198,15 +229,15 @@ public class BankAccountUsingArray {
 		boolean run = true;
 		while (run) {
 			
-			System.out.println("----------------------------------------------------------------------------");
-			System.out.println("| 1. Create Account | 2. Account list | 3. Deposit | 4. withdraw | 5. exit |");
-			System.out.println("----------------------------------------------------------------------------");
+			System.out.println("------------------------------------------------------------------------------------------------");
+			System.out.println("| 1. Create Account | 2. Account list | 3. Deposit | 4. withdraw | 5. account search | 6. exit |");
+			System.out.println("------------------------------------------------------------------------------------------------");
 			
 			System.out.println("Please enter the menu number");
-			int selectNO = scan.nextInt(); // �޴� ���� ��ĳ��
+			int selectNO = scan.nextInt(); // 메뉴 선택 스캐너
 					
 			if(selectNO == 1 ) {
-				createAccount();
+				createAccount(); // 메서드 명으로 호출
 			}
 			else if(selectNO == 2 ) {
 				accountList();
@@ -217,11 +248,22 @@ public class BankAccountUsingArray {
 			else if(selectNO == 4 ) {
 				withdraw();
 			}
+			else if(selectNO == 6 ) {
+				System.out.println("------------------------------------------------------------------------------------------------");
+				System.out.println("|                 Thank you for visiting our banks. Your best bank, KOSMO Bank                 |");
+				System.out.println("------------------------------------------------------------------------------------------------");
+				run = false; // break 구문
+			}
 			else if(selectNO == 5 ) {
-				System.out.println("----------------------------------------------------------------------------");
-				System.out.println("|       Thank you for visiting our banks. Your best bank, KOSMO Bank       |");
-				System.out.println("----------------------------------------------------------------------------");
-				run = false; // break ����
+				findAccount();
+			}
+			else if(selectNO == 7 ) { // 이스터에그 파트 추가 pepe the frog
+				System.out.println();
+				System.out.println("⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠉⠉⠉⠛⠻⣿⣿⠿⠛⠛⠙⠛⠻⣿⣿⣿⣿⣿⣿⣿");System.out.println("⣿⣿⣿⣿⣿⠟⠁⠀⠀⠀⢀⣀⣀⡀⠀⠈⢄⠀⠀⠀ ⠀⠀⠀⠀⢻⣿⣿⣿⣿⣿⣿");System.out.println("⣿⣿⣿⣿⠏⠀⠀⠔⠉⠁⠀  ⠀⠈⠉⠓⢼⡤⠔⠒⠀⠐⠒⠢⠌⠿⢿⣿⣿⣿");	System.out.println("⣿⣿⣿⡏⠀⠀⠀⠀⠀⠀⢀⠤⣒⠶⠤⠭⠭⢝⡢⣄⢤⣄⣒⡶⠶⣶⣢⡝⢿⣿⣿");
+				System.out.println("⡿⠋⠁⠀⠀⠀ ⠀⣀⠲⠮⢕⣽⠖⢩⠉⠙⣷⣶⣮⡍⢉⣴⠆⣭⢉⠑⣶⣮⣅⢻");System.out.println("⠀⠀⠀⠀⠀ ⠀⠀⠉⠒⠒⠻⣿⣄⠤⠘⢃⣿⣿⡿⠫⣿⣿⣄⠤⠘⢃⣿⣿⠿⣿");System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠓⠤⠭⣥⣀⣉⡩⡥⠴⠃⠀⠈⠉⠁⠈⠉⠁⣴⣾⣿⣿");	System.out.println("⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⠤⠔⠊⠀⠀⠀⠓⠲⡤⠤⠖⠐⢿⣿⣿⣿⣿⣿");
+				System.out.println("⠀⠀  ⠀⠀⠀⠀⠀⠀⣠⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢻⣿⣿⣿");System.out.println("⠀⠀⠀  ⠀⠀⠀⠀⢸⣿⡻⢷⣤⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣘⣿⣿");System.out.println("⠀⠀⠀  ⠀⠀⠠⡀⠀⠙⢿⣷⣽⣽⣛⣟⣻⠷⠶⢶⣦⣤⣤⣤⣤⣶⠾⠟⣯");System.out.println("⠀⠀⠀⠀  ⠀⠀⠉⠂⠀⠀⠀⠈⠉⠙⠛⠻⠿⠿⠿⠿⠶⠶⠶⠶⠾⣿⣟⣿⣿");
+				System.out.println("⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ⠀  ⠀⠀⠀⠀⠀⠀⠀⢀⣴⣿⣿⣿⣿⣿⣿");System.out.println("⣿⣿⣶⣤⣀⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⣤⣟⢿⣿⣿⣿⣿⣿⣿⣿⣿");	System.out.println("⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣶⣶⣶⣶⣶⣶⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿");System.out.println();System.out.println("hav a damn good nice day!");
+				System.out.println();System.out.println();
 			}
 		}
 	//end of document
