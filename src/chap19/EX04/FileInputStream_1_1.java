@@ -43,7 +43,7 @@ public class FileInputStream_1_1 {
 			is2 = new FileInputStream(inFile);			
 			while ((data = is2.read()) != -1) { // IOEception이 필요함
 				System.out.print((char)data);
-				}} catch(IOException E) {  // 여기서는 FileNotFoundException이 발생하는데, IOEception이 더 상위개념이라 포괄처리가 가능함.
+				}} catch(IOException E) {  // 여기서는 FileNotFoundException이 발생하는데, IOEception이 더 상위개념이라 포괄처리가   가능함.
 					System.out.println("예외상황 발생, 파일을 읽을 수 없습니다");
 		}finally {
 			if(is2 != null ) {

@@ -50,9 +50,7 @@ public class BankAccountUsingArray {
 	private static ArrayList<Account> accountlist = new ArrayList<Account>();
 	private static HashSet<String> anumSet = new HashSet<>();
 	
-	private static void createAccount() {
-		// 코드 작성: 1. 계좌생성 스캐너로 1.계좌번호2.이름 .초기 통장 금액 입력
-		// 배열 객체에 저장함
+	private static void createAccount() { // 코드 작성: 1. 계좌생성 스캐너로 1.계좌번호2.이름 .초기 통장 금액 입력
 		
 		System.out.println("Please enter your new bank account number");
 		String input = "";
@@ -76,13 +74,12 @@ public class BankAccountUsingArray {
 		
 		accountlist.add(new Account(input, owner, balance));
 		System.out.println("The information you entered is as follows.");
-		System.out.println(" account number: " + input + " | owner: " + owner + " | blance: " + balance);
+		System.out.println(accountlist);
 		System.out.println();
 	}
 	
 	
-	private static void accountList() {
-		// 배열에 저장된 객체를 꺼내서 쭉 나열해줌.
+	private static void accountList() { // 코드작성2. 배열에 저장된 객체를 꺼내서 쭉 나열해줌.
 		// 계좌 목록 출력 계좌번호 이름 금액을 쭉쭉 출력
 		for(int i = 0; i< accountlist.size(); i++) {
 			System.out.println(accountlist.get(i));
@@ -189,8 +186,8 @@ public class BankAccountUsingArray {
 	
 	// 배열에서 Account 객체 내의 ano[계좌번호]와 동일한 계좌를 찾아서 찾은 객체를 리턴으로 돌려줌.
 	
-	private static void findAccount() { // 이미 findAccount 기능이 각 부분에 구현되이 었어서 이 부분을 검색기능으로 추가하기로 변경
-										// 바로 문구를 출력할 수 있도록 반환 타입을 void로 바꿔줌.
+	private static void findAccount() { // 이 파트를 못보고 지나쳐서 각 부분에 구현해줌 .이미 findAccount 기능이 각 부분에 구현되이 었어서
+										// 이 부분을 검색기능으로 추가하기로 변경 바로 문구를 출력할 수 있도록 반환 타입을 void로 바꿔줌.
 		Account account = null ; 
 		//코드 작성 
 		int balNum = 0;
@@ -236,7 +233,7 @@ public class BankAccountUsingArray {
 			System.out.println("Please enter the menu number");
 			int selectNO = scan.nextInt(); // 메뉴 선택 스캐너
 					
-			if(selectNO == 1 ) {
+			if(selectNO == 1 ) { // 코드 작성
 				createAccount(); // 메서드 명으로 호출
 			}
 			else if(selectNO == 2 ) {
