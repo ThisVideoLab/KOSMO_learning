@@ -7,7 +7,6 @@ interface MyInterface{
 }
 
 class A {
-	
 	//Number : Boolean, Charactor를 제외한 6개 타입(Byte,Short,Integer,Long,Float,Double)
 	public <T extends Number> void method1 (T t) {
 		System.out.println(t.intValue()); // Number 타입의 메서드 . t.intValue()
@@ -47,7 +46,6 @@ public class BoundedTypeOfGenericMethod {
 		
 		B b = new B(); //
 		
-		
 		System.out.println("============================");
 		// 인터페이스를 구현한 내부 익명 클래스
 		// Method2에 매개변수로 올 수 있는 것은 인터페이스 타입, 인터페이스를 구현한 자식 클래스
@@ -55,13 +53,9 @@ public class BoundedTypeOfGenericMethod {
 			public void print(){
 				System.out.println("print() 구현");// 
 			};
-		}
-			);	// 
-
-		
+		});
 
 		b.<MyInterface> method2(new C()); // 매개변수로 인터페이스를 구현한 자식 객체
-		
 		
 		System.out.println("============================");
 		// 익명클래스로 제너릭 메서드 호출 후 매개변수로 던져주기

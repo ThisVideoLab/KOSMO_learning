@@ -49,8 +49,8 @@ public class ArrayListMethod_1 {
 		
 		System.out.println(aList3);
 		
-		//7.remove(Object o): 값으로 삭제
-		aList3.remove(new Integer(2));	//값으로 삭제를 할 수 있다.
+		//7.remove(Object o): 들어있는 값으로 삭제
+		aList3.remove(new Integer(2));	//들어있는 값으로 삭제를 할 수 있다.
 		
 		System.out.println(aList3);
 		

@@ -20,7 +20,6 @@ class Point <X, Y>{ // 제네릭 클래스
 	}
 }
 
-
 class GenericMethod{
 	public static<X,Y> double makeRectangle (Point <X,Y> p1, Point <X,Y> p2) { //
 		 
@@ -30,7 +29,6 @@ class GenericMethod{
 		double y2 = (double) p2.getY();
 		
 		return Math.abs(x1-x2)*Math.abs(y1-y2); // 가로 곱하기 세로 // 절대값을 구하는 방법은 검색해서 넣음
-		
 	}
 }
 

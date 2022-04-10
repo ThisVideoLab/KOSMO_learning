@@ -50,7 +50,7 @@ class MemberArrayList{ // MemberArrayList를 객체화하면 ArrayList가 생성됨
 	public boolean removeMember() {
 	// arrayList에 저장된  memberid를 검색해서 해당 객체를 삭제함
 		
-POS1:	while(true) {
+		while(true) {
 			System.out.println("삭제를 원하는 회원의 ID를 입력하세요. 모두 입력했다면 0 을 입력하세요.");
 			Scanner scan = new Scanner(System.in);
 			int IdNumberToRemove = scan.nextInt();

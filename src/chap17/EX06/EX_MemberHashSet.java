@@ -123,7 +123,7 @@ public class EX_MemberHashSet {
 		Member memberHong = new Member(1004, "홍날두");
 		Member memberLee2 = new Member(1005, "이동극");
 		
-		memberHashSet.addMember(memberLee); // 각 개체를 어레이 리스트에 저장
+		memberHashSet.addMember(memberLee); // 각 개체를 맴버 해쉬셋에 저장
 		memberHashSet.addMember(memberSon);
 		memberHashSet.addMember(memberPark);
 		memberHashSet.addMember(memberHong);

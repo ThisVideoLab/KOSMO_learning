@@ -6,12 +6,9 @@ import java.util.List;
 
 // ArrayList vs LinkedList
 // ArrayList : 값에 대헤서 index 값을 가지고 있다. 검색 속도가 빠르다.
-			//단점 : 중간에서 값을 추가/삭제 시 부하가 굉장히 많이 걸린다.
+			//단점 : 중간에서 값을 추가/삭제 시 부하가 굉장히 많이 걸린다. 값을 삭제하면 삭제한 방 뒤에 있는 모든 칸을 한칸씩 당겨야 함.
 //LinkedList : 각 각의 값은 앞뒤의 연결고리만 가지고 있다. 검색시에 index번호가 할당된다. 검색이 ArrayList에 비해서 느리다.
-			//장점 : 중간에 값을 추가/삭제 시 부하가 걸리지 않는다.
-
-
-
+			//장점 : 중간에 값을 추가/삭제 시 부하가 걸리지 않는다. 단지 앞뒤 연결 고리를 이어주기만 하면 됨.
 
 public class ArrayListVsLinkedList {
 

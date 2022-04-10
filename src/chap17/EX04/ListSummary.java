@@ -16,7 +16,6 @@ public class ListSummary {
 		arrayList.add("°¡");
 		System.out.println(arrayList);
 		
-		
 		//2. Vector
 		List<String> vector =new Vector<>();
 		vector.add("´Ù");
