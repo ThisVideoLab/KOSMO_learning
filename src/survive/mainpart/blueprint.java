@@ -1,4 +1,4 @@
-package survive.main;
+package survive.mainpart;
 
 
 

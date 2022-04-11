@@ -29,7 +29,7 @@ public static void main(String[] args) throws UnsupportedEncodingException {
    }
 
    System.out.println("=========================");
-   byte[] b3 = "가나다".getBytes("UTF-16");      
+   byte[] b3 = "가나다".getBytes("UTF-16");
    byte[] b4 = "가나다".getBytes("UTF-8");
    
    System.out.println(b3.length);   // 8 : BOM(2byte) + 가나다(6byte)   
@@ -46,7 +46,6 @@ public static void main(String[] args) throws UnsupportedEncodingException {
       System.out.printf("%02X" , b);   
       System.out.println();
    }
-   
    System.out.println(new String (b3,"UTF-16"));
    System.out.println(new String (b3,"UTF-16"));
    System.out.println(new String (b4,"UTF-8"));

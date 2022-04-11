@@ -30,6 +30,11 @@ public class FileInputStream_1 {
 	      // MS949 : 영어 : 1byte, 한글은 : 2 byte
 	      // EUC-KR : 영어 : 1byte, 한글은 : 2byte
 	      // UTF-16 : 영어, 한글 : 2byte , 첫번째 BOM 2byte <= 식별자
+		
+          // Java에서 운영체제 별 줄바꿈 처리
+		  // - UNIX : \n
+		  // - WINDOWS : \r\n (다만 \r은 생략 가능함, 다만 콘솔이나 메모장의 기본형은 \r\n 임)
+		  // - MAC : \r
 	      
 	      
 	      System.out.print(is.read());

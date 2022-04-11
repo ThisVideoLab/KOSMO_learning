@@ -3,7 +3,7 @@ package chap17.EX05;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Member extends MemberArrayList{ // DTO, VO : 각 계층간에 데이터를 받아서 전달해주는 클래스
+class Member{ // DTO, VO : 각 계층간에 데이터를 받아서 전달해주는 클래스
 	private int memberId;
 	private String memberName;
 	

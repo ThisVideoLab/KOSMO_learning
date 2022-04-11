@@ -92,9 +92,9 @@ class MemberHashSet{ // MemberArrayList를 객체화하면 ArrayList가 생성됨
 	 	if(ir.hasNext()) {						   // 이 ir이라는 Iterator는 집게로, 닥치는대로 1개의 과일을 잡아 꺼냄.
 	 		Member member = ir.next();
 	 		int tempid = member.getMemberId();
-	 	if(tempid == memberid) {
-	 		hashSet.remove(member);
-	 		return fasle;
+		 	if(tempid == memberid) {
+		 		hashSet.remove(member);
+		 		return fasle;
 	 		}
 	 	} 	
 		 */

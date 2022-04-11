@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 
-class Account extends BankAccountArray{
+class Account{
 	private String anum; // account number
 	private String owner; // owner of account
 	private int balance; // amount of money in the account
@@ -40,9 +40,6 @@ class Account extends BankAccountArray{
 	}
 }
 
-class BankAccountArray{ 
-	
-}
 
 public class BankAccountUsingArray {
 	
