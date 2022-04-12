@@ -23,7 +23,6 @@ public class FileInputStream_1 {
 		//2. InpoutStream 객체를 생성해야 파일의 내용을 읽을 수 있음.
 		InputStream is = new FileInputStream(inFile); // InputStream은 추상 클래스로 객체를 직접 생성이 불가능하며, 타입 지정만 가능함.
 		
-		
 		 // 파일의 내용을 출력해보자.
 	      
 	      // UTF-8 : 영어 : 1byte, 한글은 : 3byte

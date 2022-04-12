@@ -1,3 +1,5 @@
-Java can be very fun. But not to me. 
+Java can be very fun. 
 
-오늘의 날씨는 매우 화창하고 맑습니다.  
+오늘의 날씨는 매우 화창하고 맑습니다.
+
+지금은 벚꽃이 만발합니다. 그래서 비염으로 고통받습니다.
