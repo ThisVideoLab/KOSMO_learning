@@ -32,7 +32,7 @@ public class InputStreamWriter_1 {
 
 	//2. FileWriter를 통해서 데이터 쓰기 (Default: MS949에서 UTF8로 작성)
 	System.out.println("=========================================");
-	System.out.println("2. FileWriter를 통해서 데이터 쓰기 (Default: MS949에서 UTF8로 작성)");System.out.println();
+	System.out.println("2. FilㅈeWriter를 통해서 데이터 쓰기 (Default: MS949에서 UTF8로 작성)");System.out.println();
 	
 	try (OutputStream os1 = new FileOutputStream(osw2);
 		OutputStreamWriter osw3 = new OutputStreamWriter(os1, "UTF-8");){ 

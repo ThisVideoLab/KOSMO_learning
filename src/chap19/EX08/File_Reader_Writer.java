@@ -43,7 +43,7 @@ public class File_Reader_Writer {
 		try (Reader reader1 = new FileReader(rwFile);){
 			int data;
 			while ((data = reader1.read()) != -1) {
-				System.out.println((char)data);
+				System.out.print((char)data);
 			}
 		} catch (Exception e) {}
 		
