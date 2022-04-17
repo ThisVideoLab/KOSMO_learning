@@ -66,10 +66,7 @@ class Member extends MemberHashSet{ // DTO, VO : 각 계층간에 데이터를 받아서 전�
 }
 
 class MemberHashSet{ // MemberArrayList를 객체화하면 ArrayList가 생성됨 
-	private Set<Member> hashSet;
-	public MemberHashSet () { // 매개변수의 값이 없는 기본 생성자.
-		hashSet = new HashSet<>();
-	}
+	private Set<Member> hashSet = new HashSet<>();
 	public void addMember(Member member) { // Member 객체를 인풀받아 hashSet에 member 객체를 저장, 중복이 저장되면 안됨.
 										   //  Member 객체의 memberId 필드의 값이 동일할 경우, 동일한 객체라고 정의함.
 										   // equals(), hashCode() 매소드를 재정의해 memberId의 일치 여부를 판단 함
